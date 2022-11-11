@@ -5,10 +5,8 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import * as React from "react";
 import {NavbarMenuProps} from "./types";
-import {useStyles} from "./styles";
 
 const NavbarMenuView = ({handleClose, handleClick, open, anchorEl}: NavbarMenuProps) => {
-  const classes = useStyles();
   return (
     <Box component={"span"}>
       <IconButton
@@ -17,7 +15,17 @@ const NavbarMenuView = ({handleClose, handleClick, open, anchorEl}: NavbarMenuPr
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        className={classes.menuButton}
+        sx={{backgroundColor: 'primary.main',
+          color: 'common.white',
+          width: '64px',
+          height: '64px',
+          borderRadius: 0,
+          transition: 'all linear .1s',
+          '&:hover': {
+            backgroundColor: 'common.white',
+            color: 'primary.main'
+          }
+        }}
       >
         <FolderOutlinedIcon />
         <KeyboardArrowDownIcon />
