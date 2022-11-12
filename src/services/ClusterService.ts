@@ -1,18 +1,21 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
-export const postAPI = createApi({
+export const clusterAPI = createApi({
     reducerPath: 'clusterAPI',
     baseQuery: fetchBaseQuery({
         baseUrl: 'http://localhost:3000/'
     }),
     tagTypes: ['Post'],
     endpoints: (builder) => ({
-        fetchAllPosts: builder.query<string, File>({
-            query: () => ({
+        loadImage: builder.mutation<File, File>({
+            query: (file) => ({
                 url: '/cluster/createClusters',
-
+                method: 'POST',
+                body: file
             }),
-            providesTags: result => ['Post']
+            invalidatesTags: ['Post']
         })
     })
 })
+
+export const { useLoadImageMutation } = clusterAPI

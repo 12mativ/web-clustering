@@ -4,6 +4,7 @@ import {createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import {ClustersPage} from "./pages/ClustersPage";
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import {IndexPage} from "./pages/IndexPage";
+import {NotFound} from "./pages/404";
 
 function App() {
   const theme = createTheme({});
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Navigate to="/index" />} />
           <Route path="index" element={<IndexPage />} />
           <Route path="clusters" element={<ClustersPage />} />
+          {/*<Route path="*" element={<NotFound />} />*/}
         </Routes>
       </BrowserRouter>
       <CssBaseline />
