@@ -16,12 +16,6 @@ export default class Clusters extends React.PureComponent {
       clusters: []
     };
   }
-  // componentDidMount() {
-  //   for(let i = 1; i <= this.state.count; i++) {
-  //     this.setState({ clusters: [...this.state.clusters,
-  //         <ScatterSeries key={i} valueField={`val${i}`} argumentField={`arg${i}`}/>] })
-  //   }
-  // }
 
   render() {
     for(let i = 1; i <= this.state.count; i++) {

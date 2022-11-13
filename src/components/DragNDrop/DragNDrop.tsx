@@ -2,12 +2,12 @@ import React, {useState} from "react";
 import {FileUploader} from "react-drag-drop-files";
 import {Box, Button, Typography} from "@mui/material";
 import {clusterAPI} from "../../services/ClusterService";
-import axios from "axios";
 
 const fileTypes = ["CSV"];
 
 const DragDrop = () => {
   const [file, setFile] = useState<File | null>(null);
+  const [count, setCount] = useState<number>(5);
   const handleChange = (file: File) => {
     setFile(file)
   };
@@ -21,8 +21,11 @@ const DragDrop = () => {
         const formData = new FormData()
         // @ts-ignore
         formData.append('file', file)
-        axios.post('http://localhost:3000/cluster/createClusters', formData)
-          .then(res => res.data.blob())
+        // @ts-ignore
+        formData.append('clusters_num', count)
+        loadImage(formData)
+        // axios.post('http://localhost:3000/cluster/createClusters', formData)
+        //   .then(res => res.data.blob())
       }}
       >
         <FileUploader
@@ -40,10 +43,7 @@ const DragDrop = () => {
           })}>
             Импортировать
           </Button>
-
-
       </Box>
-      <img src="" alt=""/>
     </Box>
 
   );
