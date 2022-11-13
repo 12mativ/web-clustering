@@ -12,8 +12,6 @@ function NavbarView() {
                     <ArrowBackIcon />
                   </IconButton>
                 </NavLink>
-
-                {/*<NavbarMenu />*/}
             </Toolbar>
         </AppBar>
     );

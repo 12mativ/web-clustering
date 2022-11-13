@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar/Navbar";
 import {Box, Grid} from "@mui/material";
 import {DragNDropContainer} from "../components/DragNDrop/DragNDropContainer";
 
-export const ClustersPage = () => {
+export const CalculatePage = () => {
     return (
         <StandardLayout>
             <Grid item xl={12} lg={12} md={12} xs={12}>

@@ -35,13 +35,10 @@ export const IndexPage = () => {
             })}>
               SHA-256
             </Typography>
-            <Typography sx={{textAlign: 'center', color: 'common.white'}}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Aliquid delectus dicta, dolorum excepturi fugiat, libero
-              maiores mollitia neque obcaecati officiis omnis porro
-              praesentium quaerat ratione saepe soluta ullam ut voluptatibus.
+            <Typography component={'h2'} variant={'h3'} sx={{textAlign: 'center', color: 'common.white'}}>
+              Определение доходности ИП через кластеризацию
             </Typography>
-            <NavLink to={'/clusters'} style={{textDecoration: 'none', width: '20%', marginTop: '1rem'}}>
+            <NavLink to={'/calculate'} style={{textDecoration: 'none', width: '20%', marginTop: '1rem'}}>
               <Button variant='contained' sx={(theme) => (
                 {width: '100%', padding: theme.spacing(1.5)}
               )}>
