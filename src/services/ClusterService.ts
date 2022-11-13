@@ -3,7 +3,7 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 export const clusterAPI = createApi({
     reducerPath: 'clusterAPI',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'localhost:3434/'
+        baseUrl: 'http://localhost:3434/'
     }),
     tagTypes: ['Post'],
     endpoints: (builder) => ({
