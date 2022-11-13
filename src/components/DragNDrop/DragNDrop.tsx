@@ -12,7 +12,6 @@ const DragDrop = () => {
     setFile(file)
   };
   const [loadImage, {data}] = clusterAPI.useLoadImageMutation()
-  console.log(data)
   let myImage = document.querySelector('img');
   return (
     <Box>
@@ -36,6 +35,8 @@ const DragDrop = () => {
           hoverTitle=''
           disabled={!!file}
         />
+        <input value={count} onChange={(e) => { // @ts-ignore
+          setCount(e.target.value)}}/>
         {file && <Typography sx={{color: 'success.main'}}>Файл успешно загружен</Typography>}
           <Button type='submit' variant='contained' sx={(theme) => ({
             mt: theme.spacing(2),
@@ -44,6 +45,7 @@ const DragDrop = () => {
             Импортировать
           </Button>
       </Box>
+      {data && <img src={data + '.jpg'} alt=""/>}
     </Box>
 
   );
