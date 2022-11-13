@@ -3,13 +3,13 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 export const clusterAPI = createApi({
     reducerPath: 'clusterAPI',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:3000/'
+        baseUrl: 'http://localhost:3434/'
     }),
     tagTypes: ['Post'],
     endpoints: (builder) => ({
         loadImage: builder.mutation<File, FormData>({
             query: (file) => ({
-                url: '/cluster/createClusters',
+                url: '/index',
                 method: 'POST',
                 body: file
             }),

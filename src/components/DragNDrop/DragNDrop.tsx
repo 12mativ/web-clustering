@@ -45,7 +45,7 @@ const DragDrop = () => {
             Импортировать
           </Button>
       </Box>
-      {data && <img src={data + '.jpg'} alt=""/>}
+      {<img src={`data:image/jpeg;base64,${data}`} alt=""/>}
     </Box>
 
   );
